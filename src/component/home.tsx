@@ -5,6 +5,7 @@ import { FaInfoCircle } from 'react-icons/fa';  // Example using react-icons lib
 import { Link } from 'react-router-dom';
 import overlayImage from './image.png';
 import imageMain from'./mainpage.jpg';
+import makroplus from'./Bright_Colorful_Playful_Funny_Donuts_Food_Circle_Logo_1.png';
 const home: React.FC = () => {
     return (
         <div style={containerStyle}>
@@ -17,13 +18,13 @@ const home: React.FC = () => {
                   <div style={whiteSquareStyle}></div> {/* White Square */}
                 <Link to="/choosing" style={iconOverlayStyle}>
                     <img 
-                        src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2020/07/attachment_119369943-e1594735927566.jpeg?auto=format&q=60&fit=max&w=930"  // Replace with your overlay image URL
-                        alt="Overlay Image"
-                        style={overlayImageStyle}
+                        src={makroplus} 
+                        alt="makroplus"
+                        style={overlayImageStyle2}
                     />
-                     <span style={textStyle}>Makro Pro Plus</span> {/*Makro Pro Plus*/}
+                     <span style={textStyle}>แม็คโคร โปร พลัส</span> {/*Makro Pro Plus*/}
                 </Link>
-                <Link to="/list" style={iconListOverlayStyle}>
+                <Link to="/myitem" style={iconListOverlayStyle}>
                     <img 
                         src={overlayImage} // Replace with your overlay image URL
                         alt="Overlay Image"
@@ -71,7 +72,7 @@ const iconOverlayStyle: React.CSSProperties = {
     position: 'absolute',
     top: '42.6%',
     left: '14%',
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(-50%, -45%)',
     width: '140px',  // Set the width of the overlay container
     textAlign: 'center', // Center text under the icon
 };
@@ -79,11 +80,19 @@ const overlayImageStyle: React.CSSProperties = {
     width: '90px',     // Adjust size as needed
     height: 'auto',    // Maintain aspect ratio
 };
+const overlayImageStyle2: React.CSSProperties = {
+    width: '75px',     // Adjust size as needed
+    height: 'auto',    // Maintain aspect ratio
+};
 const textStyle: React.CSSProperties = {
     display: 'block',
     color: 'black',     // Text color
     fontSize: '13px',  // Text size
-    fontWeight: 'bold',
+    transform: 'translate(25%, -25%)',
+    fontWeight:'lighter',
+    textAlign: 'center', // Center text under the icon
+    height:'auto',
+    width:'89px'
 };
 const whiteSquareStyle: React.CSSProperties = {
     position: 'absolute',
