@@ -6,7 +6,8 @@ import list from'./list.png';
 import takra from'./ตะกร้า.png';
 import bill from'./my bill.png';
 import account from'./my account.png';
-const MyItems: React.FC = () => {
+import { FaArrowLeft } from 'react-icons/fa'; // Import the back arrow icon
+const mapping: React.FC = () => {
     const [items, setItems] = useState<string[]>([]);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [newItem, setNewItem] = useState('');
@@ -29,6 +30,13 @@ const MyItems: React.FC = () => {
     return (
         <div style={{ width: '430px', height: '932px', border: '1px solid #ddd', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
         <nav style={{ backgroundColor: '#f8f8f8', padding: '15px', borderBottom: '1px solid #ddd', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Link to="/myitem" style={{ textDecoration: 'none', color: 'black' }}>
+        <span 
+                    style={{ position: 'absolute', left: '15px',top:'15px', cursor: 'pointer', fontSize: '18px', color: 'black', }}
+                >
+                    &lt;
+                </span>
+                </Link>
             <h1 style={{ margin: '0', fontSize: '18px', color: 'black' }}>รายการของฉัน</h1>
         </nav>
 
@@ -50,13 +58,6 @@ const MyItems: React.FC = () => {
                 ))}
             </ul>
         </div>
-        <Link to="/mapping" style={{ textDecoration: 'none', color: 'black' }}>
-        <div style={{ padding: '15px', display: 'flex', justifyContent: 'center' }}>
-            <button style={{ backgroundColor: 'red', color: 'white', padding: '15px 30px', border: 'none', borderRadius: '5px', fontSize: '16px', cursor: 'pointer' }}>
-                ระบุตำแหน่งสินค้า
-            </button>
-        </div>
-        </Link>
 
             <nav style={{ backgroundColor: 'white', padding: '0.1px 0', borderTop: '1px solid #ddd', display: 'flex' ,justifyContent:'space-around'}}>
                 <div style={{ textAlign: 'center' }}>
@@ -69,7 +70,7 @@ const MyItems: React.FC = () => {
                     </Link>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <Link to="/mybill" style={{ textDecoration: 'none', color: 'black' }}>
+                    <Link to="/myitem" style={{ textDecoration: 'none', color: 'black' }}>
                     <img 
                 src={list}
                 alt="Home Icon" 
@@ -78,7 +79,7 @@ const MyItems: React.FC = () => {
                     </Link>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <Link to="/cart" style={{ textDecoration: 'none', color: 'black' }}>
+                    <Link to="/mybill" style={{ textDecoration: 'none', color: 'black' }}>
                     <img 
                 src={takra}
                 alt="Home Icon" 
@@ -88,7 +89,7 @@ const MyItems: React.FC = () => {
                     </Link>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <Link to="/mybill" style={{ textDecoration: 'none', color: 'black' }}>
+                    <Link to="/orders" style={{ textDecoration: 'none', color: 'black' }}>
                     <img 
                 src={bill}
                 alt="Home Icon" 
@@ -142,10 +143,10 @@ const MyItems: React.FC = () => {
                         display: flex;
                         flex-direction: column;
                         position: fixed;
-                        top: 86%;
+                        top: 72%;
                         left: 50%;
                         transform: translate(-50%, -50%);
-                        width: 430px;
+                        width: 393px;
                         background-color: white;
                         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                         border-radius: 15px;
@@ -165,7 +166,7 @@ const MyItems: React.FC = () => {
                         cursor: pointer;
                     }
                     .modal-body {
-                        padding: 15px;
+                        padding: 20px;
                         text-align: center;
                        color:black;
                     }
@@ -191,7 +192,7 @@ const MyItems: React.FC = () => {
                     }
 
                     .modal-footer {
-                        padding: 10px;
+                        padding: 15px;
                         text-align: center;
                     }
 
@@ -223,4 +224,4 @@ const MyItems: React.FC = () => {
     );
 };
 
-export default MyItems;
+export default mapping;
