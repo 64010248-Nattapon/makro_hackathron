@@ -1,7 +1,6 @@
 // CenteredImage.tsx
 
 import React from 'react';
-import { FaInfoCircle } from 'react-icons/fa';  // Example using react-icons library
 import { Link } from 'react-router-dom';
 import overlayImage from './image.png';
 import imageMain from'./mainpage.jpg';
@@ -77,7 +76,7 @@ const iconOverlayStyle: React.CSSProperties = {
     textAlign: 'center', // Center text under the icon
 };
 const overlayImageStyle: React.CSSProperties = {
-    width: '90px',     // Adjust size as needed
+    width: '74px',     // Adjust size as needed
     height: 'auto',    // Maintain aspect ratio
 };
 const overlayImageStyle2: React.CSSProperties = {

@@ -2,17 +2,23 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './choosingpage.css';  // Import the CSS file
 import { FaHome, FaArrowRight, FaInfoCircle } from 'react-icons/fa';  // Import icons
 const choose: React.FC = () => {
     return (
         <div className="container">
             <div className="search-bar">
+                
                 <input 
                     type="text" 
-                    placeholder="Search..." 
+                    placeholder="เลือกสาขา" 
                 />
-                <button>Search</button>
+                 <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+        <span 
+                    style={{ position: 'absolute', left: '15px',top:'15px', cursor: 'pointer', fontSize: '18px', color: 'black', }}
+                >
+                    &lt;
+                </span>
+                </Link>
             </div>
             <div className="content">
                 <div className="row">

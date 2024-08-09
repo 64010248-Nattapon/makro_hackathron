@@ -27,7 +27,7 @@ const MyItems: React.FC = () => {
     };
 
     return (
-        <div style={{ width: '430px', height: '932px', border: '1px solid #ddd', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
+        <div style={{ width: '430px', height: '932px', border: '1px solid #ddd', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative',backgroundColor:'white' }}>
         <nav style={{ backgroundColor: '#f8f8f8', padding: '15px', borderBottom: '1px solid #ddd', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <h1 style={{ margin: '0', fontSize: '18px', color: 'black' }}>รายการของฉัน</h1>
         </nav>
@@ -69,7 +69,7 @@ const MyItems: React.FC = () => {
                     </Link>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <Link to="/mybill" style={{ textDecoration: 'none', color: 'black' }}>
+                    <Link to="/myitem" style={{ textDecoration: 'none', color: 'black' }}>
                     <img 
                 src={list}
                 alt="Home Icon" 
@@ -78,7 +78,7 @@ const MyItems: React.FC = () => {
                     </Link>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <Link to="/cart" style={{ textDecoration: 'none', color: 'black' }}>
+                    <Link to="/mybill" style={{ textDecoration: 'none', color: 'black' }}>
                     <img 
                 src={takra}
                 alt="Home Icon" 
