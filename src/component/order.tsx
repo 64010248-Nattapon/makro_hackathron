@@ -13,9 +13,8 @@ interface Item {
     price: number;
 }
 
-const Mybill: React.FC = () => {
+const Orders: React.FC = () => {
     const [items, setItems] = useState<Item[]>([]);
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [newItemName, setNewItemName] = useState('');
     const [newItemPrice, setNewItemPrice] = useState<number | ''>('');
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -51,7 +50,6 @@ const Mybill: React.FC = () => {
             setItems([...items, newItem]);
             setNewItemName('');
             setNewItemPrice('');
-            setIsPopupOpen(false);
         }
     };
 
@@ -60,9 +58,6 @@ const Mybill: React.FC = () => {
         setItems(updatedItems);
     };
 
-    const closeModal = () => {
-        setIsPopupOpen(false);
-    };
 
     return (
         <div style={{ width: '430px', height: '932px', border: '1px solid #ddd', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative', backgroundColor: 'white' }}>
@@ -77,7 +72,7 @@ const Mybill: React.FC = () => {
                 <h1 style={{ margin: '0', fontSize: '18px', color: 'black' }}>ตะกร้า</h1>
             </nav>
 
-            <div style={{ padding: '15px', borderBottom: '1px solid #ddd', display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={() => setIsPopupOpen(true)}>
+            <div style={{ padding: '15px', borderBottom: '1px solid #ddd', display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                 <span style={{ fontSize: '15px', marginRight: '10px', color: 'black' }}>
                     <MdOutlineAddHomeWork
                         style={{ cursor: 'pointer', color: 'black' }}
@@ -107,35 +102,52 @@ const Mybill: React.FC = () => {
             </div>
 
             <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    padding: '15px',
-                    borderTop: '1px solid #ddd',
-                    backgroundColor: '#f8f8f8',
-                }}
-            >
-                {/* Left Component: Pay Button */}
-                <Link to="/orders" style={{ textDecoration: 'none', color: 'black' }}>
-                <button
-                    style={{
-                        backgroundColor: 'red',
-                        color: 'white',
-                        border: 'none',
-                        padding: '10px 20px',
-                        fontSize: '18px',
-                        cursor: 'pointer',
-                    }}
-                >
-                    ชำระเงิน
-                </button>
-                </Link>
-                {/* Right Component: Total Amount */}
-                <span style={{ fontSize: '18px', fontWeight: 'bold', color: 'black' }}>
-                    Total: ${items.reduce((total, item) => total + item.price, 0).toFixed(2)}
-                </span>
-            </div>
+    style={{
+        padding: '15px',
+        borderTop: '1px solid #ddd',
+        backgroundColor: '#f8f8f8',
+    }}
+>
+    {/* Right Component: Total Amount */}
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <span style={{ fontSize: '18px', fontWeight: 'bold', color: 'black' }}>ส่วนลด</span>
+        <span style={{ fontSize: '18px', fontWeight: 'bold', color: 'black' }}>
+            {items.reduce((total, item) => total + item.price, 0).toFixed(2)}  ฿
+        </span>
+    </div>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <span style={{ fontSize: '18px', fontWeight: 'bold', color: 'black' }}>ยอดชำระ</span>
+        <span style={{ fontSize: '18px', fontWeight: 'bold', color: 'black' }}>
+            {items.reduce((total, item) => total + item.price, 0).toFixed(2)}  ฿
+        </span>
+    </div>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <span style={{ fontSize: '18px', fontWeight: 'bold', color: 'black' }}>พอยท์ที่ได้รับ</span>
+        <span style={{ fontSize: '18px', fontWeight: 'bold', color: 'black' }}>
+            {items.reduce((total, item) => total + item.price, 0).toFixed(2)} 
+        </span>
+    </div>
+
+    {/* Left Component: Pay Button */}
+    <Link to="/orders" style={{ textDecoration: 'none', color: 'black', width: '100%' }}>
+        <button
+            style={{
+                backgroundColor: '#F5323D', // Match the red color
+                color: 'white',
+                border: 'none',
+                padding: '15px 20px',
+                fontSize: '18px',
+                fontWeight: 'bold', // Make the font bold
+                cursor: 'pointer',
+                width: '100%', // Make the button take the full width
+                borderRadius: '30px', // Add rounded corners
+                textAlign: 'center',
+            }}
+        >
+            ไปหน้าชำระสินค้า
+        </button>
+    </Link>
+</div>
 
             <nav style={{ backgroundColor: 'white', padding: '0.1px 0', borderTop: '1px solid #ddd', display: 'flex', justifyContent: 'space-around' }}>
                 <div style={{ textAlign: 'center' }}>
@@ -188,4 +200,4 @@ const Mybill: React.FC = () => {
     );
 };
 
-export default Mybill;
+export default Orders;

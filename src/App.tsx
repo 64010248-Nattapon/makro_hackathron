@@ -5,6 +5,7 @@ import ChoosingPage from './component/choosingpage';
 import MyItems from './component/Myitem';
 import Mapping from'./component/mapping';
 import Mybill from './component/mybill';
+import Orders from './component/order';
 const App: React.FC = () => {
     return (
         <Router>
@@ -14,6 +15,7 @@ const App: React.FC = () => {
                 <Route path="/myitem" element={<MyItems />} />
                 <Route path="/mapping" element={<Mapping />} />
                 <Route path='/mybill' element={<Mybill/>}/>
+                <Route path='/orders' element={<Orders/>}/>
             </Routes>
         </Router>
     );

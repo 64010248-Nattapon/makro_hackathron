@@ -88,7 +88,7 @@ const MyItems: React.FC = () => {
                     </Link>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <Link to="/mybill" style={{ textDecoration: 'none', color: 'black' }}>
+                    <Link to="/orders" style={{ textDecoration: 'none', color: 'black' }}>
                     <img 
                 src={bill}
                 alt="Home Icon" 
