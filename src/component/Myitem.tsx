@@ -7,10 +7,9 @@ import takra from'./ตะกร้า.png';
 import bill from'./my bill.png';
 import account from'./my account.png';
 const MyItems: React.FC = () => {
-    const [items, setItems] = useState<string[]>([]);
+    const [items, setItems] = useState<string[]>(['นม','กล้วย']);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [newItem, setNewItem] = useState('');
-
     const handleAddItem = () => {
         if (newItem.trim()) {
             setItems([...items, newItem]);
@@ -50,7 +49,7 @@ const MyItems: React.FC = () => {
                 ))}
             </ul>
         </div>
-        <Link to="/mapping" style={{ textDecoration: 'none', color: 'black' }}>
+        <Link to={{pathname:"/mapping"}}style={{ textDecoration: 'none', color: 'black' }}>
         <div style={{ padding: '15px', display: 'flex', justifyContent: 'center' }}>
             <button style={{ backgroundColor: 'red', color: 'white', padding: '15px 30px', border: 'none', borderRadius: '5px', fontSize: '16px', cursor: 'pointer' }}>
                 ระบุตำแหน่งสินค้า
@@ -119,14 +118,13 @@ const MyItems: React.FC = () => {
                             <span onClick={closeModal}>&times;</span>
                         </div>
                         <div className="modal-body">
-                       
                             <input
                                 type="text"
                                 value={newItem}
                                 onChange={(e) => setNewItem(e.target.value)}
-                                placeholder="Enter new item"
+                                placeholder="ชื่อรายการ"
                             />
-                            <p>กรุณากรอกชื่อรายการใหม่</p>
+                            <p>ระบุได้สูงสุดถจตัวอักษร</p>
                         </div>
                         <div className="modal-footer">
                             <button onClick={handleAddItem}>สร้างรายการ</button>
@@ -143,7 +141,7 @@ const MyItems: React.FC = () => {
                         flex-direction: column;
                         position: fixed;
                         top: 86%;
-                        left: 50%;
+                        left: 11%;
                         transform: translate(-50%, -50%);
                         width: 430px;
                         background-color: white;
@@ -165,8 +163,8 @@ const MyItems: React.FC = () => {
                         cursor: pointer;
                     }
                     .modal-body {
-                        padding: 15px;
-                        text-align: center;
+                        padding: 19px;
+                        text-align: flex-start;
                        color:black;
                     }
 
@@ -177,17 +175,19 @@ const MyItems: React.FC = () => {
 
                     .modal-body input {
                         width: 100%;
-                        padding: 4px;
+                        padding: 6px;
                         margin-bottom: 5px;
-                        font-size: 16px;
+                        font-size: 20px;
                         border: 1px solid #ccc;
-                        border-radius: 5px;
-                    }
-
+                        border-radius: 15px;
+                        background-color: white; /* Correct property for background color */
+                        color: grey; /* Set text color to grey */
+                    }   
                     .modal-body p {
                         font-size: 12px;
                         color: #888;
-                        margin-bottom: 20px;
+                        margin-bottom: 0px;
+                        padding: 0px 5px;
                     }
 
                     .modal-footer {
