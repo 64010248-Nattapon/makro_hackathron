@@ -60,7 +60,15 @@ const Orders: React.FC = () => {
 
 
     return (
-        <div style={{ width: '430px', height: '932px', border: '1px solid #ddd', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative', backgroundColor: 'white' }}>
+        <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+            width: '100vw',
+            backgroundColor: 'black', // Light gray background for the whole screen
+        }}>
+  <div style={{ width: '430px', height: '932px', border: '1px solid #ddd', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative', backgroundColor: 'white' }}>
             <nav style={{ backgroundColor: '#f8f8f8', padding: '15px', borderBottom: '1px solid #ddd', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Link to="/choosingpage" style={{ textDecoration: 'none', color: 'black' }}>
                     <span
@@ -129,7 +137,7 @@ const Orders: React.FC = () => {
     </div>
 
     {/* Left Component: Pay Button */}
-    <Link to="/orders" style={{ textDecoration: 'none', color: 'black', width: '100%' }}>
+    <Link to="/paymentmethod" style={{ textDecoration: 'none', color: 'black', width: '100%' }}>
         <button
             style={{
                 backgroundColor: '#F5323D', // Match the red color
@@ -197,6 +205,8 @@ const Orders: React.FC = () => {
                 </div>
             </nav>
         </div>
+</div>
+      
     );
 };
 

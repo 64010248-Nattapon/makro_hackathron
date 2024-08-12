@@ -45,6 +45,7 @@ const containerStyle: React.CSSProperties = {
     margin: 0,
     padding: 0,
     overflow: 'hidden',
+    backgroundColor: 'black'
 };
 
 const imageContainerStyle: React.CSSProperties = {

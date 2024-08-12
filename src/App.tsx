@@ -7,6 +7,8 @@ import Mapping from'./component/mapping';
 import Mybill from './component/mybill';
 import Orders from './component/order';
 import Map from './component/showmap';
+import PaymentMethod from './component/selectpayment';
+import Welcome from './component/welcomepage';
 const App: React.FC = () => {
     return (
         <Router>
@@ -18,6 +20,9 @@ const App: React.FC = () => {
                 <Route path='/map' element={<Map/>}/>
                 <Route path='/mybill' element={<Mybill/>}/>
                 <Route path='/orders' element={<Orders/>}/>
+                <Route path='/paymentmethod' element={<PaymentMethod/>}/>
+                <Route path='/welcome' element={<Welcome/>}/>
+
             </Routes>
         </Router>
     );

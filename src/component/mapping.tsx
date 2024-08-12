@@ -31,7 +31,15 @@ const Mapping: React.FC = () => {
     };
 
     return (
-        <div style={{ width: '430px', height: '932px', border: '1px solid #ddd', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative', backgroundColor: 'white' }}>
+        <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+            width: '100vw',
+            backgroundColor: 'black', // Light gray background for the whole screen
+        }}>
+             <div style={{ width: '430px', height: '932px', border: '1px solid #ddd', margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative', backgroundColor: 'white' }}>
             <nav style={{ backgroundColor: '#f8f8f8', padding: '15px', borderBottom: '1px solid #ddd', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Link to="/myitem" style={{ textDecoration: 'none', color: 'black' }}>
                     <span style={{ position: 'absolute', left: '15px', top: '15px', cursor: 'pointer', fontSize: '18px', color: 'black' }}>
@@ -223,6 +231,8 @@ const Mapping: React.FC = () => {
                 `}
             </style>
         </div>
+    </div>    
+       
     );
 };
 
