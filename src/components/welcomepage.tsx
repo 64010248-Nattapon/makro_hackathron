@@ -14,7 +14,7 @@ const Welcome: React.FC = () => {
             width: '100vw',
             backgroundColor: 'black',
         }}>
-            <Link to='/scanpage'>
+            <Link to='/scanbarcode'>
             <div style={{ 
                 width: '430px', 
                 height: '932px', 

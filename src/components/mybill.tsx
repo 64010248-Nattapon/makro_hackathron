@@ -17,7 +17,7 @@ const Mybill: React.FC = () => {
     const [items, setItems] = useState<Item[]>([]);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [newItemName, setNewItemName] = useState('');
-    const [newItemPrice, setNewItemPrice] = useState<number | ''>('');
+    const [newItemPrice, setNewItemPrice] = useState<number | ''>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
